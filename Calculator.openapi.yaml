@@ -1,0 +1,106 @@
+openapi: 3.0.1
+info:
+  title: Calculator
+  version: '1.0'
+servers:
+  - url: https://aasalessoaservicesdev.azure-api.net/TestInstance
+paths:
+  /Add:
+    post:
+      summary: Add
+      description: Adds two integers. This is a test WebService. ©DNE Online
+      operationId: 5dfa6f254f19951324dd04a4
+      requestBody:
+        description: AddSoapIn
+        content:
+          application/json:
+            example:
+              add:
+                intA: 1
+                intB: 1
+      responses:
+        '200':
+          description: AddSoapOut
+          content:
+            application/json:
+              example:
+                addResponse:
+                  addResult: 1
+  /Subtract:
+    post:
+      summary: Subtract
+      description: Subtract
+      operationId: 5dfa6f254f19951324dd04a5
+      requestBody:
+        description: SubtractSoapIn
+        content:
+          application/json:
+            example:
+              subtract:
+                intA: 2
+                intB: 1
+      responses:
+        '200':
+          description: SubtractSoapOut
+          content:
+            application/json:
+              example:
+                subtractResponse:
+                  subtractResult: 1
+  /Multiply:
+    post:
+      summary: Multiply
+      description: Multiply
+      operationId: 5dfa6f254f19951324dd04a6
+      requestBody:
+        description: MultiplySoapIn
+        content:
+          application/json:
+            example:
+              multiply:
+                intA: 1
+                intB: 1
+      responses:
+        '200':
+          description: MultiplySoapOut
+          content:
+            application/json:
+              example:
+                multiplyResponse:
+                  multiplyResult: 1
+  /Divide:
+    post:
+      summary: Divide
+      description: Divide
+      operationId: 5dfa6f254f19951324dd04a7
+      requestBody:
+        description: DivideSoapIn
+        content:
+          application/json:
+            example:
+              divide:
+                intA: 1
+                intB: 1
+      responses:
+        '200':
+          description: DivideSoapOut
+          content:
+            application/json:
+              example:
+                divideResponse:
+                  divideResult: 1
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
+x-ms-export-notes:
+  - 'The exported API contains schemas that aren''t of content type ''application/vnd.oai.openapi.components+json'', and are hence not exported as OpenAPI components.'
